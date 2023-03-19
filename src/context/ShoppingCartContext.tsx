@@ -1,5 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { CarouselItem } from "react-bootstrap";
+import { ShoppingCart } from "../components/ShoppingCart";
+
 
 type ShoppingCartProviderProps = {
     children : ReactNode
@@ -100,6 +102,7 @@ export function ShoppingCartProvider({ children } :
             closeCart }}
             >
                 { children }
+            <ShoppingCart isOpen={isOpen}/> 
             </ShoppingCartContext.Provider>
         )
     };
